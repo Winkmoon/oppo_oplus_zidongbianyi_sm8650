@@ -6,7 +6,7 @@ env:
   FEIL: 'oppo+oplus+realme'
   ANDROID_VERSION: 'android11'
   KERNEL_VERSION: '5.4'
-  KERNEL_NAME: '_Xinran_9Pro_ShirokoNekoKernel.zip'
+  KERNEL_NAME: 'Xinran_9Pro_ShirokoNekoKernel'
   KERNELSU_VARIANT: 'SukiSU-Ultra'
   KERNELSU_BRANCH: 'susfs-dev'
 
