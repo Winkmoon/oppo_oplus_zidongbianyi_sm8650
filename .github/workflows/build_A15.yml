@@ -68,7 +68,7 @@ jobs:
         run: |
           rm -rf kernel_workspace && mkdir kernel_workspace && cd kernel_workspace
           echo "正在克隆源码仓库..."
-          git clone --depth=1 https://github.com/Winkmoon/android_kernel_oneplus_sm8350.git -b oneplus/SM8350_S_12.0_9Pro common
+          git clone --depth=1 https://github.com/Winkmoon/android_kernel_oneplus_sm8350.git -b oneplus/SM8350_R_11.0 common
           echo "正在去除 ABI 保护 & 去除 dirty 后缀..."
           rm common/android/abi_gki_protected_exports_* || true
           for f in common/scripts/setlocalversion; do
