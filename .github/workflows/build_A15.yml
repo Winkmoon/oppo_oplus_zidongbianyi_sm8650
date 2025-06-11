@@ -105,11 +105,11 @@ jobs:
           # patch -p1 < 50_add_susfs_in_gki-${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}.patch || trueAdd commentMore actions
           # patch -p1 < new_hooks.patch
           
-      - name: 应用 Hide Stuff 修补程序
-        run: |
-          cd kernel_workspace/common
-          cp ../SukiSU_patch/69_hide_stuff.patch ./
-          patch -p1 < 69_hide_stuff.patch
+      # - name: 应用 Hide Stuff 修补程序
+        # run: |
+          # cd kernel_workspace/common
+          # cp ../SukiSU_patch/69_hide_stuff.patch ./
+          # patch -p1 < 69_hide_stuff.patch
 
       - name: 应用 lz4k 补丁
         run: |
