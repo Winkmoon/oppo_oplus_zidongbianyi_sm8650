@@ -59,6 +59,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt-get install curl bison flex make binutils dwarves git lld pahole zip perl make gcc python3 python-is-python3 bc libssl-dev libelf-dev llvm -y
+          sudo apt-get install gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
           sudo rm -rf ./llvm.sh
           sudo wget https://apt.llvm.org/llvm.sh
           sudo chmod +x llvm.sh
