@@ -184,7 +184,8 @@ jobs:
             rm -rf ./sched_ext/README.md
             cp -r ./sched_ext/* ./common/kernel/sched
           fi
-          cd common          
+          cd common
+          export HOSTCFLAGS=-Wno-error WERROR=0   
           make -j$(nproc --all) LLVM=-20 LLVM=1 LLVM_IAS=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnuabeihf- CC="clang" AR=aarch64-linux-gnu-ar AS=aarch64-linux-gnu-as OBJCOPY=aarch64-linux-gnu-objcopy STRIP=aarch64-linux-gnu-strip OBJCOPY=aarch64-linux-gnu-objcopy LD=ld.lld HOSTCC=clang HOSTLD=ld.lld O=out KCFLAGS+=-Wno-error gki_defconfig all
           echo "内核编译完成！"
          
