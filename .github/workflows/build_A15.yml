@@ -24,14 +24,14 @@ on:
         options:
           - 'true'
           - 'false'
-      scx_enable:
-        description: '是否安装风驰内核驱动'
-        required: true
-        type: choice
-        default: 'true'
-        options:
-          - 'true'
-          - 'false'
+      # scx_enable:
+        # description: '是否安装风驰内核驱动'
+        # required: true
+        # type: choice
+        # default: 'true'
+        # options:
+          # - 'true'
+          # - 'false'
       kernel_suffix:
         description: '内核后缀(留空默认,开头别加连字符)'
         required: false
@@ -178,12 +178,12 @@ jobs:
       - name: 构建内核
         run: |
           cd kernel_workspace
-          if [[ ${{ github.event.inputs.scx_enable }} == "true" ]]; then
-            git clone https://github.com/cctv18/sched_ext.git
-            rm -rf ./sched_ext/.git
-            rm -rf ./sched_ext/README.md
-            cp -r ./sched_ext/* ./common/kernel/sched
-          fi
+          # if [[ ${{ github.event.inputs.scx_enable }} == "true" ]]; then
+            # git clone https://github.com/cctv18/sched_ext.git
+            # rm -rf ./sched_ext/.git
+            # rm -rf ./sched_ext/README.md
+            # cp -r ./sched_ext/* ./common/kernel/sched
+          # fi
           cd common
           export HOSTCFLAGS=-Wno-error WERROR=0   
           make -j$(nproc --all) LLVM=-20 LLVM=1 LLVM_IAS=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnuabeihf- CC="clang" AR=aarch64-linux-gnu-ar AS=aarch64-linux-gnu-as OBJCOPY=aarch64-linux-gnu-objcopy STRIP=aarch64-linux-gnu-strip OBJCOPY=aarch64-linux-gnu-objcopy LD=ld.lld HOSTCC=clang HOSTLD=ld.lld O=out KCFLAGS+=-Wno-error gki_defconfig all
@@ -270,7 +270,7 @@ jobs:
             - 机型：欧加真骁龙8Gen3 6.1 Android 15内核通用（基于一加12 Android 15 版官方OKI源码）
             - 特性：SukiSU Ultra + SUSFS + VFS + KPM
             - LZ4K支持：${{ github.event.inputs.lz4k_enable }}
-            - 风驰内核支持：${{ github.event.inputs.scx_enable }}
+            # - 风驰内核支持：${{ github.event.inputs.scx_enable }}
             - 推荐系统：ColorOS 15 / RealmeUI 6.0
             - SukiSU管理器下载：[SukiSU-Ultra](https://github.com/ShirkNeko/SukiSU-Ultra/releases)
             ### ⏫️ 更新内容：
