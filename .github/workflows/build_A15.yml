@@ -174,7 +174,17 @@ jobs:
               sed -i "\$s|echo \"\\\$res\"|echo \"-${{ env.KERNEL_NAME }}\"|" "$f"
             done
           fi
-           
+
+      - name: prepatch
+        run: |
+          cd kernel_workspace
+          cd common
+          # sed -i '10i#include <linux/soc/qcom/smem.h>' drivers/soc/oplus/sensor/oplus_sensor_devinfo.c
+          # echo "CONFIG_OPLUS_FEATURE_SENSOR_CFG=n" >> arch/arm64/configs/gki_defconfig
+          wget https://github.com/reigadegr/oppo_oplus_realme_sm8650/raw/main/patch/oplus_sensor_devinfo.c
+          cp -f oplus_sensor_devinfo.c drivers/soc/oplus/sensor/oplus_sensor_devinfo.c
+          sed -i '/get_project/d' drivers/soc/oplus/sensor/oplus_sensor_devinfo.c
+
       - name: 构建内核
         run: |
           cd kernel_workspace
