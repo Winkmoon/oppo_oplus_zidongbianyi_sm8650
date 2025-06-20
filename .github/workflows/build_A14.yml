@@ -178,7 +178,7 @@ jobs:
       - name: 移除不必要的内核模块
         run: |
           cd kernel_workspace/common
-          wget https://github.com/Winkmoon/oppo_oplus_zidongbianyi_sm8650/raw/main/ace5_blackmodules.patch
+          wget https://github.com/Winkmoon/oppo_oplus_zidongbianyi_sm8650/raw/help/ace5_blackmodules.patch
           git apply ace5_blackmodules.patch
           rm ace5_blackmodules.patch
     
