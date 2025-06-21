@@ -1,4 +1,4 @@
-name: 欧加真 Android 14 通用OKI内核
+name: 欧加真-a14-ShirokoNeko Kernel-special
 
 env:
   TZ: Asia/Shanghai
@@ -6,9 +6,9 @@ env:
   FEIL: 'oppo+oplus+realme'
   ANDROID_VERSION: 'android14'
   KERNEL_VERSION: '6.1'
-  KERNEL_NAME: 'android14-11-o-gca13bffobf09'
+  KERNEL_NAME: 'Oneplus-8gen3-ShirokoNeko-XinRan_debug'
   KERNELSU_VARIANT: 'SukiSU-Ultra'
-  KERNELSU_BRANCH: 'susfs-dev'
+  KERNELSU_BRANCH: 'susfs-main'
 
 on:
   workflow_dispatch:
