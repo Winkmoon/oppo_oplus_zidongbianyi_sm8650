@@ -207,7 +207,7 @@ jobs:
             exit 1
           fi
           if [[ ${{ github.event.inputs.lz4k_enable }} == "true" ]]; then
-            wget https://raw.githubusercontent.com/Suxiaoqinx/kernel_manifest_OnePlus_Sukisu_Ultra/main/zram.zip
+            wget https://raw.githubusercontent.com/Winkmoon/oppo_oplus_zidongbianyi_sm8650/refs/heads/main/zram.zip
           fi
           if [[ -n "${{ github.event.inputs.kernel_suffix }}" ]]; then
             zip -r ../AnyKernel3_SukiSU_${{ env.KSUVER }}_${{ env.KERNEL_VERSION }}_A14_${{ github.event.inputs.kernel_suffix }}.zip ./*
